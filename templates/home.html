@@ -9,9 +9,42 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
     <title>Battery Monitoring</title>
 </head>
-<body>
-    {% for battery in batteries %}
-        <h1>{{ battery.stat }}</h1>
-    {% endfor %}
+<body>    
+    <div class="card-body">
+      <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          {% if systemOn %}
+              <h5>System: ON</h5>
+          {% else %}
+               <h5>System: OFF</h5>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+              <div class="traffic-light">
+
+                  {% if systemOn %}
+                    <input type="radio" name="rag1" class="color1" value="1">
+                    <input type="radio" name="rag1" class="color2" value="2">
+                    <input type="radio" name="rag1" class="color3checked" value="3">
+                  {% else %}
+                    <input type="radio" name="rag1" class="color1checked" value="1">
+                    <input type="radio" name="rag1" class="color2" value="2">
+                    <input type="radio" name="rag1" class="color3" value="3">
+                  {% endif %}
+
+              </div>
+        </div>
+      </div>
+
+      <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h5>Battery:</h5></div>
+          <div class="card-body">
+          <h5 class="card-title"></h5>
+          <h3 class="card-text">{{ batteries.stat }}%</h3>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

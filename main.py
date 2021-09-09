@@ -2,11 +2,10 @@ from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
-batteries =  [
-    {
+batteries = {
         'stat' : 77
     }
-]
+
 
 @app.route("/")
 def hello_world():
