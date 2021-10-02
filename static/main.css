@@ -1,4 +1,46 @@
-body {
-  background: #fafafa;
-  color: #ffffff;
+:root {
+  --main-color: #DD2F6E;
+  --color-dark: #1D2231;
+  --text-grey: #8390A2; 
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  margin-top:90px;
+  padding: 2rem 1.5rem;
+  background: #f0f0f0;
+  min-height: calc(100vh - 90px);
+  
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-top: 1rem;
+}
+
+.card-single {
+  display: flex;
+  justify-content: space-between;
+  background: #fff ;
+  padding: 2rem;
+  border-radius: 2px;
+}
+
+.card-single h1 + span {
+  color: var(--text-grey);
+}
+
+.card-single span{
+  font-size: 3rem;
+}
+
